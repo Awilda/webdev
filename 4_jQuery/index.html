@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning jQuery</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div id="circle"></div>
+
+  <div class="square"></div>
+
+  <div class="square"></div>
+
+  <p>This is some text</p>
+
+  <button id="fader">Fade Text</button>
+
+  <button id="fadeBack">Bring it Back!</button>
+
+  <!-- <iframe src="http://www.cnn.com/"></iframe> -->
+
+  <h1>Asyncronous JavaScript and XML</h1>
+
+
+  <script>
+
+    // Change Text
+    // $("#circle").click(function() {
+      // $("p").html("New text");
+    // });
+
+      
+    // Change attribute - different url
+    // $("#circle").hover(function() {
+    //   $("iframe").attr("src", "http://www.awildasadventure.wordpress.com");
+    // });
+
+
+    // Change Element Width
+    // $(".square").click(function(){
+    //   $(".square").css("width", "400px");
+    // });
+
+    
+    // Alert width when clicked
+    // $("div").click(function(){
+    //   alert($(this).css("width"));
+    // });
+    
+
+    // Hide when clicked
+    // $("div").click(function(){
+    //   $(this).hide();
+    // });
+
+
+    // Fade out when clicked
+    // $("div").click(function(){
+    //   $(this).fadeOut();
+    // });
+
+    // When circle is clicked, squares fade out
+    $("#circle").click(function(){
+      $(".square").fadeOut();
+    });
+
+    // Add another function once one function is complete
+    $("#fader").click(function(){
+      $("p").fadeOut("2000", function(){
+        alert("FadeOut Complete!");
+      });
+    });
+
+    // FadeIn
+    $("#fadeBack").click(function(){
+      $("p").fadeIn("fast");
+    });
+
+    // Animate
+    $("#circle").click(function(){
+      $(this).animate({
+        "width": "300px", 
+        "height": "300px", 
+        "borderRadius": "150px", 
+        "marginLeft": "100px", 
+        "marginTop": "100px"}, 800);
+    });
+
+  </script>
+
+
+</body>
+</html>

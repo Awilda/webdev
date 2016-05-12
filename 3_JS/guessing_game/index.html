@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Simple Guessing Game</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<section>
+
+	<h1>Pick a number between 1 - 12</h1>
+
+	<input id="guess" type="text" placeholder="#" />
+
+	<button id="submit">Submit</button>
+
+	<div id="answer"></div>
+
+</section>
+
+<script type="text/javascript">
+	
+	document.getElementById("submit").onclick=function() {
+		var x=Math.random();
+		x=13*x;
+		x=Math.floor(x)
+			if(x==document.getElementById("guess").value) {
+				document.getElementById("answer").innerHTML="Correct!";
+			} else {
+				document.getElementById("answer").innerHTML=("The number was " + x + ". Try Again!").fontcolor("red");
+			}
+	}
+
+</script>
+
+</html>

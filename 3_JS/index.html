@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+    <title>Learning JavaScript</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style type="text/css">
+
+    #redCircle {
+      background-color: red;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-top: 1em;
+    }
+
+    </style>
+</head>
+
+<body>
+
+  <!-- Text Changer -->
+
+  <button id="textChanger">Change the text</button>
+
+  <div id="firstDiv">This is some text.</div>
+
+
+
+  <!-- Text Appender -->
+
+  <button id="textAppender">Append some text</button>
+
+  <div id="secondDiv">JavaScript is...</div>
+
+
+
+  <!-- Text Creator -->
+  <button id="textCreator">Create some text</button>
+
+  <div id="emptyDiv"></div>
+
+
+
+  <!-- Red Circle - make disappear -->
+  <div id="redCircle"></div>
+
+
+
+  <!-- Weather Input -->
+  <p>What is the weather?</p>
+  <input id="weather" />
+  <button id="myButton">Submit</button>
+
+
+  <!-- Number Guess -->
+  <p>How many fingers am I holding up?</p>
+  <input id="answer" />
+  <button id="myAnswerButton">Submit Answer</button>
+
+
+
+  <!-- Add into empty paragraph -->
+  <p id="arrayString"></p>
+
+
+  <!-- Computer Guess -->
+  <p>How many fingers are you holding up?</p>
+  <input id="myNumber" />
+  <button id="computerGuess">Guess</button>
+
+
+  <!-- Using Functions -->
+  <p>What's your name?</p>
+  <input id="name" />
+  <button id="nameChecker">Send</button>
+
+
+  <!-- Functions Adding Numbers -->
+  <p>3 + 4 =</p>
+  <p id="paragraph"></p>
+
+
+
+    <script type="text/javascript">
+
+
+      // Arrays & console.logs
+        myArray = new Array();
+
+        myArray[0]="pizza";
+        myArray[1]="chocolate";
+
+        console.log(myArray);
+
+        myOtherArray=["rain","sunshine"];
+
+        myOtherArray.push("snow");
+
+      // myOtherArray.splice(1, 2);
+      // start at element number 1, stop at number 2 => rain is left
+
+        myOtherArray.splice(2, 0, "hail");
+      // insert at second index, remove nothing, word to be inserted
+
+        console.log(myOtherArray.length);
+        console.log(myOtherArray);
+
+
+      // Text Changer   
+        document.getElementById("textChanger").onclick=function() {
+          document.getElementById("firstDiv").innerHTML=myArray[1];
+        }
+
+
+      // Text Appender
+        document.getElementById("textAppender").onclick=function() {
+          document.getElementById("secondDiv").innerHTML=document.getElementById("secondDiv").innerHTML + "great!";
+        }
+
+
+      // Text Creator
+        document.getElementById("textCreator").onclick=function() {
+          document.getElementById("emptyDiv").innerHTML="<ul><li>cat</li><li>dog</li></ul>";
+        }
+
+
+      // Red Circle - make disappear
+        document.getElementById("redCircle").onclick=function() {
+          document.getElementById("redCircle").style.display="none";
+        }
+
+
+      // Weather Input
+        document.getElementById("myButton").onclick=function() {
+          if(document.getElementById("weather").value=="rain") {
+            alert("it's raining!");
+          } else {
+            alert("it's not raining!");
+          }
+        }
+
+
+      // Number Guess
+        document.getElementById("myAnswerButton").onclick=function() {
+        var x=Math.random();
+        x=6*x; 
+        x=Math.floor(x);
+        
+        if(x==document.getElementById("answer").value) {
+          alert("That's correct!");
+        } else {
+          alert("That's wrong! My number was "+x);
+        }
+      }
+
+
+      // Add into empty paragraph
+        var arrayString = "";
+
+        var anArray=["Lolita", "Charlie", "Cedrique", "Anubis", "Harley"];
+
+        // FOR LOOP
+        // for(var i=0;i<anArray.length; i++) {
+        //   arrayString=arrayString + anArray[i] + ", ";
+        // }
+        //   document.getElementById("arrayString").innerHTML=arrayString;
+
+        // WHILE LOOP (useful for when you don't know how long the loop is going to be)
+        var i=0;
+        while(i<anArray.length) {
+          arrayString=arrayString + anArray[i] + ", ";
+          i++;
+        }
+        document.getElementById("arrayString").innerHTML=arrayString;
+
+
+      // Number Guess
+        document.getElementById("myAnswerButton").onclick=function() {
+        var x=Math.random();
+        x=6*x; 
+        x=Math.floor(x);
+        
+        if(x==document.getElementById("answer").value) {
+          alert("That's correct!");
+        }else{
+          alert("That's wrong! My number was "+x);
+        }
+      }
+
+
+      // Computer Guess
+        document.getElementById("computerGuess").onclick=function() {
+
+        var gotit=false;
+        var guesses=1;
+        var y;
+
+      // loop while gotit is equal to false
+        while(gotit==false && guesses<101) {
+
+        y=Math.random();
+        y=6*y;
+        y=Math.floor(y);
+
+          if(document.getElementById("myNumber").value==y) {
+            gotit=true;
+          }else{
+            guesses++;
+          }
+        }
+          if(guesses<101) {
+            alert("Got it! It was "+y+". It only took me "+guesses+" guess(es)!");
+          }else{
+            alert("Ok, I give up!");
+          }
+        }
+
+
+      // Using Functions
+        function alertMe() {
+          alert("Hi Awi!");
+        }
+        document.getElementById("nameChecker").onclick=function() {
+          if(document.getElementById("name").value=="awilda") {
+            alertMe();
+          }
+        }
+
+        function adding(a,b) {
+          return(a+b);
+        }
+
+        document.getElementById("paragraph").innerHTML=adding(3,4);
+
+
+    </script>
+
+
+</body>
+</html>

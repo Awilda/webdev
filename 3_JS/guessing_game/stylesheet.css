@@ -1,0 +1,44 @@
+html {
+	background-image: url("images/numbers.jpg");
+	font-family: 'Indie Flower', cursive;
+}
+section {
+	background-color: white;
+	border: 2px solid black;
+	height: 500px;
+	width: 800px;
+	position: relative;
+	left: 230px;
+}
+section h1 {
+	font-size: 2.5em;
+	position: relative;
+	left: 140px;
+	top: 30px;
+}
+#guess {
+	position: relative;
+	left: 340px;
+	height: 50px;
+	width: 80px;
+	font-size: 2em;
+	top: 30px;
+}
+#submit {
+	font-family: 'Indie Flower', cursive;
+	position: relative;
+	left: 260px;
+	height: 40px;
+	width: 70px;
+	top: 100px;
+	background-color: black;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+}
+#answer {
+	position: relative;
+	top: 120px;
+	left: 270px;
+	font-size: 1.5em;
+}

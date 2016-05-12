@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning jQuery</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div id="circle"></div>
+
+  <div class="square"></div>
+
+  <div class="square"></div>
+
+  <h1>Asyncronous JavaScript and XML</h1>
+
+
+  <script>
+
+    // Gets file and puts it into the variable, data
+    // $.get("test.html", function(data){
+    //   alert(data);
+    // })
+
+    // Another way to do so
+    // $.ajax({
+    //   url:"test.html"
+    // }).done(function(data){
+    //   alert(data);
+    // });
+
+
+  // Match regex in a string
+  // var regex=/great/i;
+  // var string="Regex is great!";
+  // var result = string.match(regex);
+    // alert(result);
+
+  
+  var regex=/e/g;
+  var string="Regex is Great!";
+  var result = string.match(regex);
+    alert(result);
+    
+
+  </script>
+
+
+</body>
+</html>

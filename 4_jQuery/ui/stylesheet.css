@@ -1,0 +1,17 @@
+#draggable {
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	color: white;
+}
+#resizable {
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	color: white;
+}
+#target {
+	height: 300px;
+	width: 300px;
+	background-color: yellow;
+}
